@@ -85,5 +85,15 @@ public class Phonebook {
         phbook.add(new Person());
     }
 
-
+    public void deletePage(int i)
+    {
+        try
+        {
+            phbook.remove(i);
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+    }
 }
