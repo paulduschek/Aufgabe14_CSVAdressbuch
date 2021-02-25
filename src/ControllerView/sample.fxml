@@ -5,22 +5,21 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label prefHeight="54.0" prefWidth="209.0" text="Name" />
       <Label layoutY="54.0" prefHeight="54.0" prefWidth="209.0" text="Adress" />
       <Label layoutY="100.0" prefHeight="54.0" prefWidth="209.0" text="Phone" />
       <Button layoutX="395.0" layoutY="153.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="&gt;&gt;" />
-      <Button layoutX="201.0" layoutY="153.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="1 / 2" />
+      <Button fx:id="pageNr" layoutX="201.0" layoutY="153.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="1 / 2" />
       <Button layoutX="7.0" layoutY="153.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="&lt;&lt;" />
       <Button layoutX="7.0" layoutY="237.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="Add" />
       <Button layoutX="201.0" layoutY="237.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="Delete" />
       <Button layoutX="395.0" layoutY="237.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="Save Changes" />
       <Button layoutX="7.0" layoutY="322.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="Load From CSV" />
       <Button layoutX="395.0" layoutY="322.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" text="Save to CSV" />
-      <TextField layoutX="210.0" prefHeight="54.0" prefWidth="379.0" />
-      <TextField layoutX="210.0" layoutY="54.0" prefHeight="54.0" prefWidth="379.0" />
-      <TextField layoutX="210.0" layoutY="108.0" prefHeight="38.0" prefWidth="379.0" />
+      <TextField fx:id="name" layoutX="210.0" prefHeight="54.0" prefWidth="379.0" />
+      <TextField fx:id="adress" layoutX="210.0" layoutY="54.0" prefHeight="54.0" prefWidth="379.0" />
+      <TextField fx:id="phone" layoutX="210.0" layoutY="108.0" prefHeight="38.0" prefWidth="379.0" />
    </children>
 </AnchorPane>
