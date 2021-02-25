@@ -53,11 +53,16 @@ public class Controller implements Initializable {
 
     public void showPage(int i)
     {
-        Person p = book.getPerson(i - 1);
-        name.setText(p.getName());
-        adress.setText(p.getAddr());
-        phone.setText(p.getPhoneNR());
-        pageNr.setText((i) + " / " + book.getSize());
+        Person p = book.getPerson(i-1);
+        try {
+            name.setText(p.getName());
+            adress.setText(p.getAddr());
+            phone.setText(p.getPhoneNR());
+            pageNr.setText((i) + " / " + book.getSize());
+        }
+        catch (Exception ex)
+        {
+        }
     }
 
     @Override

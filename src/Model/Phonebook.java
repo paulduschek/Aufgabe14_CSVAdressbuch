@@ -10,9 +10,10 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Phonebook {
-    private LinkedList<Person> phbook = new LinkedList<Person>();
+    private List<Person> phbook = new LinkedList<>();
 
     public void saveToCsv()          //Method to save the file to phonebook.csv
     {
@@ -68,7 +69,6 @@ public class Phonebook {
     public Person getPerson(int i)
     {
         Person person = null;
-
         try
         {
             person = phbook.get(i);
