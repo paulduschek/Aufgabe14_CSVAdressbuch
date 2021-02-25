@@ -59,4 +59,31 @@ public class Phonebook {
         person.setAddr(a);
         person.setPhoneNR(pNr);
     }
+
+    public int getSize(int i)
+    {
+        return phbook.size();
+    }
+
+    public Person getPerson(int i)
+    {
+        Person person = null;
+
+        try
+        {
+            person = phbook.get(i);
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+        return person;
+    }
+
+    public void addPage()
+    {
+        phbook.add(new Person());
+    }
+
+
 }
