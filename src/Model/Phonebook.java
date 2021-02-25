@@ -60,7 +60,7 @@ public class Phonebook {
         person.setPhoneNR(pNr);
     }
 
-    public int getSize(int i)
+    public int getSize()
     {
         return phbook.size();
     }

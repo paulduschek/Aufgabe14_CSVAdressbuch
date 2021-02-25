@@ -32,10 +32,13 @@ public class Controller implements Initializable {
     private int p;          //variable for pages later
 
     //methods
-    public void displayPage(int index)
+    public void displayPage(int i)
     {
-        Person p = book.getPerson(index - 1);
-        
+        Person p = book.getPerson(i - 1);
+        name.setText(p.getName());
+        adress.setText(p.getAddr());
+        phone.setText(p.getPhoneNR());
+        pageNr.setText((i) + " / " + book.getSize());
     }
 
     @Override
