@@ -31,16 +31,28 @@ public class Person {
         return name + "," + addr + "," + phoneNR;
     }
 
-    //setter because no getter are needed
+    //getter and setter
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setAddr(String addr) {
         this.addr = addr;
     }
 
+    public String getAddr() {
+        return addr;
+    }
+
     public void setPhoneNR(String phoneNR) {
         this.phoneNR = phoneNR;
+    }
+
+    public String getPhoneNR() {
+        return phoneNR;
     }
 }
