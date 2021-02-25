@@ -5,7 +5,9 @@
 
 package Model;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.LinkedList;
 
@@ -29,5 +31,32 @@ public class Phonebook {
         }
     }
 
-    
+    public void loadFromCsv()
+    {
+        phbook.clear();
+
+        try(BufferedReader br = new BufferedReader(new FileReader("phonebook.csv")))
+        {
+            String n = "";
+            while ((n = br.readLine()) != null)
+            {
+                String a[] = n.split(",");
+
+                phbook.add(new Person(a[0],a[1],a[2]));
+            }
+            System.out.printf("File loaded successfully! %n");
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void change(String n, String a, String pNr, int i)
+    {
+        Person person = phbook.get(i);
+        person.setName(n);
+        person.setAddr(a);
+        person.setPhoneNR(pNr);
+    }
 }
