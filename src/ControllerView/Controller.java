@@ -71,8 +71,7 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         book = new Phonebook();
-        p = 1;
-        showPage(p);
+        loadCsv();
 
         //phoneOnlyNumbers();           didnt work out properly for my implementation
     }
