@@ -9,6 +9,7 @@ import Model.Person;
 import Model.Phonebook;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -35,8 +37,9 @@ public class Controller implements Initializable {
     private Label pageNr;
 
     //variable definitions
-    private Phonebook book;
+    Phonebook book;
     private int p;          //variable for pages later
+    public static Controller c;
 
     //methods
     public static void show(Stage stage) throws Exception {
@@ -44,14 +47,18 @@ public class Controller implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(Controller.class.getResource("sample.fxml"));
             Parent root = fxmlLoader.load();
 
-            stage.setTitle("Aufgabe 14 - Duschek");
+            stage.setTitle("Aufgabe 15 - Duschek");
             stage.setScene(new Scene(root, 591, 400));
             stage.show();
+            c = fxmlLoader.getController();
+            c.stageClose(stage);
         } catch (IOException ex) {
             System.err.println("Something wrong with sample.fxml!");
             ex.printStackTrace(System.err);
         }
     }
+
+
 
     public void showPage(int i)
     {
@@ -152,5 +159,17 @@ public class Controller implements Initializable {
     public void saveCsv()
     {
         book.saveToCsv();
+    }
+
+    public void stageClose(Stage s)
+    {
+        s.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent windowEvent) {
+                save();
+                saveCsv();
+                s.close();
+            }
+        });
     }
 }
