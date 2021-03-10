@@ -125,9 +125,15 @@ public class Controller implements Initializable {
 
     public void add()
     {
-        book.addPage();
-        p = book.getSize();
-        showPage(p);
+        if(phone.getText().contains("+")) {
+            book.addPage();
+            p = book.getSize();
+            showPage(p);
+        }
+        else
+        {
+            System.out.println("Type in a valid phone numer with +!");
+        }
     }
 
     public void delete()
@@ -140,8 +146,14 @@ public class Controller implements Initializable {
     public void save()
     {
         try {
-            book.change(name.getText(), adress.getText(), phone.getText(), p - 1);
-            System.out.println("Changes saved successfully.");
+            if(phone.getText().contains("+")) {
+                book.change(name.getText(), adress.getText(), phone.getText(), p - 1);
+                System.out.println("Changes saved successfully.");
+            }
+            else
+            {
+                System.out.println("Type in valid data.");
+            }
         }
         catch (Exception ex)
         {
