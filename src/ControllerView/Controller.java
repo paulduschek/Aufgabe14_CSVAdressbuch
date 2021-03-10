@@ -125,15 +125,9 @@ public class Controller implements Initializable {
 
     public void add()
     {
-        if(phone.getText().contains("+") && name.getText().contains(" ") && adress.getText().contains(" ")) {
             book.addPage();
             p = book.getSize();
             showPage(p);
-        }
-        else
-        {
-            System.out.println("Type in a valid phone numer with +!");
-        }
     }
 
     public void delete()
