@@ -7,6 +7,8 @@ package ControllerView;
 
 import Model.Person;
 import Model.Phonebook;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -71,6 +73,21 @@ public class Controller implements Initializable {
         book = new Phonebook();
         p = 1;
         showPage(p);
+
+        phoneOnlyNumber();
+    }
+
+    public void phoneOnlyNumber()
+    {
+        phone.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    phone.setText(oldValue);
+                    System.out.println("Please type in numbers, not letters.");
+                }
+            }
+        });
     }
 
     public void previous()
