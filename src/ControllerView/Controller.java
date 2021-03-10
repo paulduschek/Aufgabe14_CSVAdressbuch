@@ -125,7 +125,7 @@ public class Controller implements Initializable {
 
     public void add()
     {
-        if(phone.getText().contains("+")) {
+        if(phone.getText().contains("+") && name.getText().contains(" ") && adress.getText().contains(" ")) {
             book.addPage();
             p = book.getSize();
             showPage(p);
@@ -146,7 +146,7 @@ public class Controller implements Initializable {
     public void save()
     {
         try {
-            if(phone.getText().contains("+")) {
+            if(phone.getText().contains("+") && name.getText().contains(" ") && adress.getText().contains(" ")) {       //first and second name, street and house number required
                 book.change(name.getText(), adress.getText(), phone.getText(), p - 1);
                 System.out.println("Changes saved successfully.");
             }
