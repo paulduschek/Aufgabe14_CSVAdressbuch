@@ -117,7 +117,14 @@ public class Controller implements Initializable {
 
     public void save()
     {
-        book.change(name.getText(), adress.getText(), phone.getText(), p-1);
+        try {
+            book.change(name.getText(), adress.getText(), phone.getText(), p - 1);
+            System.out.println("Changes saved successfully.");
+        }
+        catch (Exception ex)
+        {
+            System.out.println("No data for saving available, try again please.");
+        }
     }
 
     public void loadCsv()
