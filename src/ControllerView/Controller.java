@@ -74,17 +74,16 @@ public class Controller implements Initializable {
         p = 1;
         showPage(p);
 
-        phoneOnlyNumber();
+        //phoneOnlyNumbers();           didnt work out properly for my implementation
     }
 
-    public void phoneOnlyNumber()
+    public void phoneOnlyNumbers()
     {
         phone.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.matches("\\d*")) {
                     phone.setText(oldValue);
-                    System.out.println("Please type in numbers, not letters.");
                 }
             }
         });
